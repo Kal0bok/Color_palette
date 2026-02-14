@@ -30,4 +30,30 @@ public class ColorPickerApp extends JFrame {
     public static void main(String[] args) {
         SwingUtilities.invokeLater(() -> new ColorPickerApp().setVisible(true));
     }
+    
+    private void startPicking() {
+        try {
+            Robot robot = new Robot();
+            Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
+            BufferedImage screenShot = robot.createScreenCapture(new Rectangle(screenSize));
+
+            JWindow captureWindow = new JWindow();
+            captureWindow.setSize(screenSize);
+            captureWindow.add(new JLabel(new ImageIcon(screenShot)));
+            
+            captureWindow.addMouseListener(new MouseAdapter() {
+                @Override
+                public void mouseClicked(MouseEvent e) {
+                    Color pickedColor = new Color(screenShot.getRGB(e.getX(), e.getY()));
+                    updateUI(pickedColor);
+                    captureWindow.dispose();
+                }
+            });
+
+            captureWindow.setVisible(true);
+            captureWindow.setCursor(Cursor.getPredefinedCursor(Cursor.CROSSHAIR_CURSOR));
+        } catch (AWTException ex) {
+            JOptionPane.showMessageDialog(this, "Ошибка захвата экрана");
+        }
+    }
 }
