@@ -1,12 +1,12 @@
 # 🎨 Modern Picker Pro — Java Desktop Color Tool
 
-<p align="center">
-  <img src="src/Screen_Shot/screen.png" alt="Modern Picker Preview" width="250">
-</p>
-
 ![Java Version](https://img.shields.io/badge/Java-17+-orange?logo=java)
 ![Platform](https://img.shields.io/badge/Platform-Windows%20%7C%20macOS%20%7C%20Linux-lightgrey)
 ![License](https://img.shields.io/badge/License-MIT-green)
+
+<p align="center">
+  <img src="src/Screen_Shot/screen.png" alt="Modern Picker Preview" width="250">
+</p>
 
 A lightweight and modern desktop utility for capturing colors directly from your screen. Built with **Java Swing**, this tool focuses on aesthetics and functionality, providing developers and designers with instant access to essential color codes.
 
