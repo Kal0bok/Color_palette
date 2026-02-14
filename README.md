@@ -1,7 +1,7 @@
 # 🎨 Modern Picker Pro — Java Desktop Color Tool
 
 <p align="center">
-  <img src="screenshots/screen.jpg" alt="Modern Picker Preview" width="400">
+  <img src="ScreenShot/screen.png" alt="Modern Picker Preview" width="400">
 </p>
 
 ![Java Version](https://img.shields.io/badge/Java-17+-orange?logo=java)
