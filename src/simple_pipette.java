@@ -56,7 +56,7 @@ public class ColorPickerApp extends JFrame {
             captureWindow.setVisible(true);
             captureWindow.setCursor(Cursor.getPredefinedCursor(Cursor.CROSSHAIR_CURSOR));
         } catch (AWTException ex) {
-            JOptionPane.showMessageDialog(this, "Ошибка захвата экрана");
+            JOptionPane.showMessageDialog(this, "Error taking screenshot");
         }
     }
     
@@ -78,4 +78,14 @@ public class ColorPickerApp extends JFrame {
 
         colorInfo.setText(hex + "\n" + rgb + "\n" + rgba + "\n" + hslText);
     }
+    
+    private String getColorName(int r, int g, int b) {
+        if (r > 220 && g > 220 && b > 220) return "White";
+        if (r < 30 && g < 30 && b < 30) return "Black";
+        if (r > g && r > b) return "Red";
+        if (g > r && g > b) return "Green";
+        if (b > r && b > g) return "Blue";
+        return "Mixed color";
+    }
+    
 }
