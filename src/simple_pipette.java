@@ -1,5 +1,8 @@
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import java.awt.image.BufferedImage;
 
 public class ColorPickerApp extends JFrame {
     protected JLabel colorPreview;
@@ -55,5 +58,24 @@ public class ColorPickerApp extends JFrame {
         } catch (AWTException ex) {
             JOptionPane.showMessageDialog(this, "Ошибка захвата экрана");
         }
+    }
+    
+    private void updateUI(Color c) {
+        colorPreview.setBackground(c);
+        
+        int r = c.getRed();
+        int g = c.getGreen();
+        int b = c.getBlue();
+        int a = c.getAlpha();
+
+        String hex = String.format("#%02X%02X%02X", r, g, b);
+        String rgb = String.format("RGB: %d, %d, %d", r, g, b);
+        String rgba = String.format("RGBA: %d, %d, %d, %d", r, g, b, a);
+        
+        float[] hsb = Color.RGBtoHSB(r, g, b, null);
+        String hslText = String.format("HSL (HSB): %.0f°, %.0f%%, %.0f%%", 
+                         hsb[0] * 360, hsb[1] * 100, hsb[2] * 100);
+
+        colorInfo.setText(hex + "\n" + rgb + "\n" + rgba + "\n" + hslText);
     }
 }
