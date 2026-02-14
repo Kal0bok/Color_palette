@@ -17,10 +17,10 @@ public class ColorPickerApp extends JFrame {
         colorPreview.setPreferredSize(new Dimension(100, 100));
         colorPreview.setBorder(BorderFactory.createLineBorder(Color.GRAY));
 
-        colorInfo = new JTextArea("Нажмите кнопку, чтобы начать...");
+        colorInfo = new JTextArea("Press button to start...");
         colorInfo.setEditable(false);
 
-        pickButton = new JButton("Взять пипетку");
+        pickButton = new JButton("Pick pipette");
 
         add(pickButton, BorderLayout.NORTH);
         add(colorPreview, BorderLayout.CENTER);
